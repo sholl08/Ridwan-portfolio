@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 800;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: 3ms;
+}
+.navbara:hover {
+  color: #666;
+}
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+.navbar ul li a {
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #007acc;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* Navbar slide down animation */
+.animate-slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  margin: 0 auto 1rem;
+  background-color: #ddd;
+}
+.profile-pic img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Fade in untuk section hero */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Slide up untuk elemen dalam hero */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Tambahan delay untuk elemen berbeda */
+.animate-slide-up:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.animate-slide-up:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.animate-slide-up:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-buttons {
+  margin-top: 1rem;
+}
+
+.hero-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  background-color: #444;
+  color: white;
+  transform: translateY(-2px);
+}
+
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.progress-bar {
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 1rem;
+}
+
+.progress {
+  background-color: #007acc;
+  height: 100%;
+  width: 0; /* Start at 0 */
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+}
+
+.about h2,
+.projects h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+.about-text {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  text-align: justify;
+}
+
+.skills {
+  margin-top: 1rem;
+}
+
+.skills label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.skills .progress-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 20px;
+  margin-top: 0.25rem;
+}
+
+.skills .progress {
+  height: 100%;
+  background: #666;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.project-card {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1 1 calc(33.333% - 1rem);
+  box-sizing: border-box;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact button {
+  width: fit-content;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .project-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .project-list {
+    flex-direction: column;
+  }
+
+  .hero-buttons button {
+    display: block;
+    margin: 0.5rem auto;
+    width: 80%;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+  }
+
+  .project-card {
+    flex: 1 1 100%;
+  }
+}

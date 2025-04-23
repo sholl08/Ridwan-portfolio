@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ridwan Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar animate-slide-down">
+        <div class="logo">Ridwan.</div>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero animate-fade-in" id="Home">
+      <div class="profile-pic animate-slide-up">
+        <img src="ridwan.jpg" alt="Ridwan Solehan" />
+      </div>
+      <h1 class="animate-slide-up">Ridwan Solehan</h1>
+      <p class="animate-slide-up">Frontend Beginner</p>
+      <div class="hero-buttons animate-slide-up">
+        <button>View Projects</button>
+        <button>Contact</button>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        Saya adalah mahasiswa teknik informatika Universitas Nahdlatul Ulama
+        Yogyakarta. Saat ini, saya sedang fokus mempelajari dasar-dasar
+        pengembangan web seperti HTML, CSS, dan JavaScript. Melalui study jam
+        yang diadakan oleh HMP Informatika, saya mulai mengasah skill-skill saya
+        pada bidang tersebut. Meskipun masih dalam tahap belajar, saya
+        berkomitmen untuk terus berkembang dan menerapkan ilmu yang saya peroleh
+        demi menciptakan pengalaman pengguna yang lebih baik di masa depan.
+      </p>
+      <section class="skills">
+        <h2>Skills</h2>
+        <label>HTML <span>5%</span></label>
+        <div class="progress-bar">
+          <div class="progress" data-width="5%"></div>
+        </div>
+      
+        <label>CSS <span>5%</span></label>
+        <div class="progress-bar">
+          <div class="progress" data-width="5%"></div>
+        </div>
+      
+        <label>JavaScript <span>5%</span></label>
+        <div class="progress-bar">
+          <div class="progress" data-width="5%"></div>
+        </div>
+      </section>
+      
+
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>Project Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Name</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="home-sci"></div>
+      <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+      <a href="#"><i class="bx bxl-instagram"></i></a>
+      <a href="#"><i class="bx bxl-tiktok"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+      <p>&copy; 2025 Ridwan Solehan</p>
+    </footer>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const progressBars = document.querySelectorAll(".progress");
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const bar = entry.target;
+              const targetWidth = bar.getAttribute("data-width");
+              bar.style.width = targetWidth;
+    
+              // opsional: stop observe setelah animasi pertama
+              observer.unobserve(bar);
+            }
+          });
+        }, {
+          threshold: 0.3 // saat 30% elemen terlihat
+        });
+    
+        progressBars.forEach(bar => observer.observe(bar));
+      });
+    </script>
+    
+  </body>
+</html>
